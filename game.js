@@ -21,9 +21,7 @@ var Game = (function(){
 
   // Private
   Game.prototype._askPlayers = function(){
-    [this.playerOne, this.playerTwo].forEach((function(player){
-      this._askPlayerHand(player);
-    }).bind(this));
+    [this.playerOne, this.playerTwo].forEach(this._askPlayerHand.bind(this));
   }
 
   Game.prototype._askPlayerHand = function(player){
