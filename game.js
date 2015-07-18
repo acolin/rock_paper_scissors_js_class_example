@@ -6,8 +6,8 @@ var Game = (function(){
       new Scissors()
     ];
 
-    this.playerOne = new Player({userName: params.playerOne});
-    this.playerTwo = new Player({userName: params.playerTwo});
+    this.playerOne = new Player({userName: params.playerOne, selectId: params.playerOneSelectId});
+    this.playerTwo = new Player({userName: params.playerTwo, selectId: params.playerTwoSelectId});
     this.winner = undefined;
   }
 
