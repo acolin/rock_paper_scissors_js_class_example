@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
+    <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
   </head>
   <body>
     <h1>Rock, Paper, Scissors Game!</h1>
     <h2>Escoge tu mano</h2>
+    <div id='winner-notice'></div>
     <form id="player_one_form">
       <div>
-        <span>Player one:</span><span id="player_one_name"></span>
+        <span id='player-one-name'>Player one</span>:<span id="player_one_name"></span>
         <select id="player_one_option">
           <option value="0">Rock</option>
           <option value="1">Paper</option>
@@ -20,40 +22,33 @@
 
     <form id="player_two_form">
       <div>
-        <span>Player two:</span><span id="player_two_name"></span>
+        <span id='playe-two- name'>Player two</span>:<span id="player_two_name"></span>
         <select id="player_two_option">
           <option value="0">Rock</option>
           <option value="1">Paper</option>
           <option value="2">Scissors</option>
         </select>
       </div>
+      <input type='button' value="Play now!" id="play-button"/>
     </form>
     <br>
-    <input type='button'value="Play now!"/>
 
-    <br><br><br>
-    <h2>Tabla de ganadores</h2>
-    <table class='table'>
-      <th>
-        <td>Jugador 1</td>
-        <td>Opción</td>
-        <td>Jugador 2</td>
-        <td>Opción</td>
-        <td>Ganador</td>
-      </th>
-    </table>
     <script src="game.js"></script>
     <script src="player.js"></script>
     <script src="rock.js"></script>
     <script src="paper.js"></script>
     <script src="scissors.js"></script>
     <script>
-      var game = new Game({playerOne: "Roberto", 
-        playerOneSelectId: "#player_one_option", 
-        playerTwo: "Pepe", 
-        playerTwoSelectId: "#player_two_option"});
-
-      game.play();
+      var game = new Game({
+        elements: {
+          winnerNoticeId: "#winner-notice",
+          playButtonId: "#play-button",
+        },
+        playerOne: "Roberto",
+        playerOneSelectId: "#player_one_option",
+        playerTwo: "Pepe",
+        playerTwoSelectId: "#player_two_option"
+      });
     </script>
   </body>
 </html>
