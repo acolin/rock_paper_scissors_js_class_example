@@ -12,7 +12,7 @@ var Game = (function(){
       hands: this.options
     });
     this.playerTwo = new Player({
-      userName: params.playerTwo, 
+      userName: params.playerTwo,
       selectId: params.playerTwoSelectId,
       hands: this.options
     });

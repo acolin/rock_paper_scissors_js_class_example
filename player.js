@@ -2,7 +2,7 @@ var Player = (function(){
   function Player(params){
     this.hands = params.hands;
     this.userName = params.userName;
-    this.chosenHand = this._setHand(0);
+    this._setHand(0);
     this.selectId = params.selectId;
     this._applyBindings();
   }
