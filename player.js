@@ -2,7 +2,7 @@ var Player = (function(){
   function Player(params){
     this.hands = params.hands;
     this.userName = params.userName;
-    this.chosenHand = this.hands[0];
+    this.chosenHand = this._setHand(0);
     this.selectId = params.selectId;
     this._applyBindings();
   }
@@ -16,15 +16,15 @@ var Player = (function(){
     return this.chosenHand.eq(otherPlayer.chosenHand);
   };
 
-  Player.prototype.setHand = function(chosenValue) {
+  // Private
+  Player.prototype._setHand = function(chosenValue) {
     var value = parseInt(chosenValue);
     this.chosenHand = this.hands[value];
   };
 
-  // Private
   Player.prototype._applyBindings = function(){
     $(this.selectId).on("change", (function(e){
-      this.setHand(e.target.value);
+      this._setHand(e.target.value);
     }).bind(this));
   };
 
