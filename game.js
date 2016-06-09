@@ -17,7 +17,7 @@ var Game = (function(){
       hands: this.options
     });
     this.winner = undefined;
-    this._applyBindings(params.elements);
+    this._applyBindings(params.bindableElems);
   }
 
   // Public
